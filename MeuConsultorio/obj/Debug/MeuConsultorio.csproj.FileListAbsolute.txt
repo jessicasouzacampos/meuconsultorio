@@ -79,3 +79,4 @@ D:\Codigo\MeuConsultorio\MeuConsultorio\bin\System.Web.Http.WebHost.xml
 D:\Codigo\MeuConsultorio\MeuConsultorio\obj\Debug\MeuConsultorio.csproj.CoreCompileInputs.cache
 D:\Codigo\MeuConsultorio\MeuConsultorio\obj\Debug\MeuConsultorio.dll
 D:\Codigo\MeuConsultorio\MeuConsultorio\obj\Debug\MeuConsultorio.pdb
+D:\Codigo\MeuConsultorio\MeuConsultorio\obj\Debug\MeuConsultorio.csprojResolveAssemblyReference.cache
