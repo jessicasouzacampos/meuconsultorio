@@ -1,0 +1,26 @@
+@model MeuConsultorio.Models.Procedimento
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<fieldset>
+    <legend>Procedimento</legend>
+
+    <div class="label">Codigo</div>
+    <div class="label">@Model.Codigo</div>
+
+    <div class="label">Descricao</div>
+    <div class="label">@Model.Descricao</div>
+
+    <div class="label">TipoAtendimento</div>
+    <div class="label">@Html.DisplayTextFor(_ => Model.TipoAtendimento).ToString()</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Editar", "Editar", new { id=Model.ProcedimentoId }) |
+    @Html.ActionLink("Voltar para lista", "Indice")
+</p>
+
+

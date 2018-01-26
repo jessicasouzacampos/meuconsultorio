@@ -1,0 +1,35 @@
+@model MeuConsultorio.Models.Convenio
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+<div class="ink-grid">
+    <div class="column-group">
+        <div class="ink-form">
+            <div class="control-group required">
+                @Html.LabelFor(model => model.Codigo, htmlAttributes: new { @class = "all-20 align-right" })
+                <div class="all-80">
+                    @Html.EditorFor(model => model.Codigo, new { htmlAttributes = new { @class = "control all-80" } })
+                    @Html.ValidationMessageFor(model => model.Codigo, "", new { @class = "alert basic" })
+                </div>
+            </div>
+
+            <div class="control-group required">
+                @Html.LabelFor(model => model.Descricao, htmlAttributes: new { @class = "all-20 align-right" })
+                <div class="all-80">
+                    @Html.EditorFor(model => model.Descricao, new { htmlAttributes = new { @class = "control" } })
+                    @Html.ValidationMessageFor(model => model.Descricao, "", new { @class = "alert basic" })
+                </div>
+            </div>
+
+            <div class="control-group required">
+                @Html.LabelFor(model => model.Fatura, htmlAttributes: new { @class = "all-20 align-right" })
+                <div class="all-80">
+                    @Html.EditorFor(model => model.Fatura, new { htmlAttributes = new { @class = "control" } })
+                    @Html.ValidationMessageFor(model => model.Fatura, "", new { @class = "alert basic" })
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,47 @@
+@model IEnumerable<MeuConsultorio.Models.Procedimento>
+
+@{
+    ViewBag.Title = "Indice";
+}
+
+<h2>Indice</h2>
+
+<p>
+    @Html.ActionLink("Novo", "Criar")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            Codigo
+        </th>
+        <th>
+            Descricao
+        </th>
+        <th>
+            TipoAtendimento
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Editar", "Editar", new { id=item.ProcedimentoId }) |
+            @Html.ActionLink("Detalhes", "Detalhes", new { id=item.ProcedimentoId }) |
+            @Html.ActionLink("Excluir", "Excluir", new { id=item.ProcedimentoId })
+        </td>
+        <td>
+			@item.Codigo
+        </td>
+        <td>
+			@item.Descricao
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.TipoAtendimento).ToString()
+        </td>
+    </tr>
+}
+
+</table>
+
+

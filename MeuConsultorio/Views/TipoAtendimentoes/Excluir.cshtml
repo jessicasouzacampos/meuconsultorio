@@ -1,0 +1,29 @@
+@model MeuConsultorio.Models.TipoAtendimento
+
+@{
+    ViewBag.Title = "Excluir";
+}
+
+<h2>Excluir</h2>
+
+<h3>Deseja mesmo excluir esse registro?</h3>
+<fieldset>
+    <legend>TipoAtendimento</legend>
+
+    <div class="display-label">Codigo</div>
+    <div class="display-field">@Model.Codigo</div>
+
+    <div class="display-label">Descricao</div>
+    <div class="display-field">@Model.Descricao</div>
+
+    <div class="display-label">Procedimentos</div>
+    <div class="display-field">@(Model.Procedimentos == null ? "None" : Model.Procedimentos.Count.ToString())</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Excluir" /> |
+        @Html.ActionLink("Voltar para lista", "Indice")
+    </p>
+}
+
+

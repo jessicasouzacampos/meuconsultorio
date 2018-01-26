@@ -1,0 +1,26 @@
+@model MeuConsultorio.Models.Procedimento
+
+@{
+    ViewBag.Title = "Criar";
+}
+
+<h2>Criar</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Procedimento</legend>
+
+		@Html.Partial("_CriarOuEditar", Model)
+
+        <p>
+            <input type="submit" value="Criar" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Voltar para lista", "Indice")
+</div>
+
+

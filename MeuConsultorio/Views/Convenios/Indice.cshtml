@@ -1,0 +1,47 @@
+@model IEnumerable<MeuConsultorio.Models.Convenio>
+
+@{
+    ViewBag.Title = "Indice";
+}
+
+<h2>Indice</h2>
+
+<p>
+    @Html.ActionLink("Novo", "Criar")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            Codigo
+        </th>
+        <th>
+            Descricao
+        </th>
+        <th>
+            Fatura
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Editar", "Editar", new { id=item.ConvenioId }) |
+            @Html.ActionLink("Detalhes", "Detalhes", new { id=item.ConvenioId }) |
+            @Html.ActionLink("Excluir", "Excluir", new { id=item.ConvenioId })
+        </td>
+        <td>
+			@item.Codigo
+        </td>
+        <td>
+			@item.Descricao
+        </td>
+        <td>
+			@item.Fatura
+        </td>
+    </tr>
+}
+
+</table>
+
+

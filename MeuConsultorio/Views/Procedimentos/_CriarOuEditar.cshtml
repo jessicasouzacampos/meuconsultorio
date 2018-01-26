@@ -1,0 +1,33 @@
+@model MeuConsultorio.Models.Procedimento
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="grid-container">
+    @Html.LabelFor(model => model.Codigo, htmlAttributes: new { @class = "label small-6" })
+	<div class="small-6">
+		@Html.EditorFor(model => model.Codigo, new { htmlAttributes = new { @class = "cell" } })
+		@Html.ValidationMessageFor(model => model.Codigo, "", new { @class = "label alert" })
+	</div>
+</div>
+
+<div class="grid-container">
+    @Html.LabelFor(model => model.Descricao, htmlAttributes: new { @class = "label small-6" })
+	<div class="small-6">
+		@Html.EditorFor(model => model.Descricao, new { htmlAttributes = new { @class = "cell" } })
+		@Html.ValidationMessageFor(model => model.Descricao, "", new { @class = "label alert" })
+	</div>
+</div>
+
+<div class="grid-container">
+	@Html.LabelFor(model => model.TipoAtendimento, htmlAttributes: new { @class = "label small-6" })
+	<div class="small-6">
+		@Html.DropDownListFor(model => model.TipoAtendimentoId, ((IEnumerable<MeuConsultorio.Models.TipoAtendimento>)ViewBag.PossibleTipoAtendimentoes).Select(option => new SelectListItem {
+			Text = Html.DisplayTextFor(_ => option).ToString(), 
+			Value = option.TipoAtendimentoId.ToString(),
+			Selected = (Model != null) && (option.TipoAtendimentoId == Model.TipoAtendimentoId)
+		}), "Escolha...", htmlAttributes: new { @class = "cell" })
+		@Html.ValidationMessageFor(model => model.TipoAtendimentoId, "", new { @class = "label alert" })
+	</div>
+</div>
+
+

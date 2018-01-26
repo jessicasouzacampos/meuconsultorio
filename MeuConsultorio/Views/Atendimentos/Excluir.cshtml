@@ -1,0 +1,41 @@
+@model MeuConsultorio.Models.Atendimento
+
+@{
+    ViewBag.Title = "Excluir";
+}
+
+<h2>Excluir</h2>
+
+<h3>Deseja mesmo excluir esse registro?</h3>
+<fieldset>
+    <legend>Atendimento</legend>
+
+    <div class="display-label">Codigo</div>
+    <div class="display-field">@Model.Codigo</div>
+
+    <div class="display-label">NomePaciente</div>
+    <div class="display-field">@Model.NomePaciente</div>
+
+    <div class="display-label">DataHora</div>
+    <div class="display-field">@String.Format("{0:g}", Model.DataHora)</div>
+
+    <div class="display-label">Convenio</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.Convenio).ToString()</div>
+
+    <div class="display-label">TipoAtendimento</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.TipoAtendimento).ToString()</div>
+
+    <div class="display-label">Procedimento</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.Procedimento).ToString()</div>
+
+    <div class="display-label">Valor</div>
+    <div class="display-field">@String.Format("{0:F}", Model.Valor)</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Excluir" /> |
+        @Html.ActionLink("Voltar para lista", "Indice")
+    </p>
+}
+
+

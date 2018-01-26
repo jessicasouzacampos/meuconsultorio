@@ -1,0 +1,74 @@
+@model MeuConsultorio.ViewModels.AtendimentoViewModel
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Codigo, htmlAttributes: new { @class = "control-label col-md-2" })
+	<div class="col-md-10">
+		@Html.EditorFor(model => model.Codigo, new { htmlAttributes = new { @class = "form-control" } })
+		@Html.ValidationMessageFor(model => model.Codigo, "", new { @class = "text-danger" })
+	</div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.NomePaciente, htmlAttributes: new { @class = "control-label col-md-2" })
+	<div class="col-md-10">
+		@Html.EditorFor(model => model.NomePaciente, new { htmlAttributes = new { @class = "form-control" } })
+		@Html.ValidationMessageFor(model => model.NomePaciente, "", new { @class = "text-danger" })
+	</div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.DataHora, htmlAttributes: new { @class = "control-label col-md-2" })
+	<div class="col-md-10">
+		@Html.EditorFor(model => model.DataHora, new { htmlAttributes = new { @class = "form-control", type = "date" } })
+		@Html.ValidationMessageFor(model => model.DataHora, "", new { @class = "text-danger" })
+	</div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Valor, htmlAttributes: new { @class = "control-label col-md-2" })
+	<div class="col-md-10">
+		@Html.EditorFor(model => model.Valor, new { htmlAttributes = new { @class = "form-control" } })
+		@Html.ValidationMessageFor(model => model.Valor, "", new { @class = "text-danger" })
+	</div>
+</div>
+
+<div class="form-group">
+	@Html.LabelFor(model => model.Convenios, htmlAttributes: new { @class = "control-label col-md-2" })
+	<div class="col-md-10">
+	    @*@Html.DropDownListFor(model => model.ConvenioId, ((IEnumerable<MeuConsultorio.Models.Convenio>)ViewBag.PossibleConvenios).Select(option => new SelectListItem {
+			Text = Html.DisplayTextFor(_ => option).ToString(), 
+			Value = option.ConvenioId.ToString(),
+			Selected = (Model != null) && (option.ConvenioId == Model.ConvenioId)
+		}), "Escolha...", htmlAttributes: new { @class = "form-control" })*@
+	    @Html.DropDownListFor(model => model.ConvenioId, Model.Convenios, "Selecione o convênio" , htmlAttributes: new { @class = "form-control" })
+		@Html.ValidationMessageFor(model => model.ConvenioId, "", new { @class = "text-danger" })
+	</div>
+</div>
+<div class="form-group">
+	@Html.LabelFor(model => model.TipoAtendimentos, htmlAttributes: new { @class = "control-label col-md-2" })
+	<div class="col-md-10">
+	    @*@Html.DropDownListFor(model => model.TipoAtendimentoId, ((IEnumerable<MeuConsultorio.Models.TipoAtendimento>)ViewBag.PossibleTipoAtendimentos).Select(option => new SelectListItem {
+			Text = Html.DisplayTextFor(_ => option).ToString(), 
+			Value = option.TipoAtendimentoId.ToString(),
+			Selected = (Model != null) && (option.TipoAtendimentoId == Model.TipoAtendimentoId)
+		}), "Escolha...", htmlAttributes: new { @class = "form-control" })*@
+	    @Html.DropDownListFor(model => model.TipoAtendimentoId, Model.TipoAtendimentos, "Selecione o tipo de atendimento" , htmlAttributes: new { @class = "form-control" })
+		@Html.ValidationMessageFor(model => model.TipoAtendimentoId, "", new { @class = "text-danger" })
+	</div>
+</div>
+<div class="form-group">
+	@Html.LabelFor(model => model.Procedimentos, htmlAttributes: new { @class = "control-label col-md-2" })
+	<div class="col-md-10">
+	    @*@Html.DropDownListFor(model => model.ProcedimentoId, ((IEnumerable<MeuConsultorio.Models.Procedimento>)ViewBag.PossibleProcedimentoes).Select(option => new SelectListItem {
+			Text = Html.DisplayTextFor(_ => option).ToString(), 
+			Value = option.ProcedimentoId.ToString(),
+			Selected = (Model != null) && (option.ProcedimentoId == Model.ProcedimentoId)
+		}), "Escolha...", htmlAttributes: new { @class = "form-control" })*@
+	    @Html.DropDownListFor(model => model.ProcedimentoId, Model.Procedimentos, "Selecione o procedimento" , htmlAttributes: new { @class = "form-control" })
+		@Html.ValidationMessageFor(model => model.ProcedimentoId, "", new { @class = "text-danger" })
+	</div>
+</div>
+
+

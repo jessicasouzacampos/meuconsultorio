@@ -1,0 +1,26 @@
+@model MeuConsultorio.Models.TipoAtendimento
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<fieldset>
+    <legend>TipoAtendimento</legend>
+
+    <div class="display-label">Codigo</div>
+    <div class="display-field">@Model.Codigo</div>
+
+    <div class="display-label">Descricao</div>
+    <div class="display-field">@Model.Descricao</div>
+
+    <div class="display-label">Procedimentos</div>
+    <div class="display-field">@(Model.Procedimentos == null ? "None" : Model.Procedimentos.Count.ToString())</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Editar", "Editar", new { id=Model.TipoAtendimentoId }) |
+    @Html.ActionLink("Voltar para lista", "Indice")
+</p>
+
+

@@ -1,0 +1,29 @@
+@model MeuConsultorio.Models.Convenio
+
+@{
+    ViewBag.Title = "Excluir";
+}
+
+<h2>Excluir</h2>
+
+<h3>Deseja mesmo excluir esse registro?</h3>
+<fieldset>
+    <legend>Convenio</legend>
+
+    <div class="ink-label">Codigo</div>
+    <div class="text-input">@Model.Codigo</div>
+
+    <div class="ink-label">Descricao</div>
+    <div class="text-input">@Model.Descricao</div>
+
+    <div class="ink-label">Fatura</div>
+    <div class="text-input">@Model.Fatura</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Excluir" /> |
+        @Html.ActionLink("Voltar para lista", "Indice")
+    </p>
+}
+
+
